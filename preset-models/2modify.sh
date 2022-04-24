@@ -24,3 +24,20 @@ cp -f uci-scripts/* files/etc/uci-defaults
 sed -i '/DISTRIB_/d' package/default-settings/files/zzz-default-settings
 sed -i '/footer.htm/d' package/default-settings/files/zzz-default-settings
 sed -i '/admin_status/d' package/default-settings/files/zzz-default-settings
+# 修改插件名字
+sed -i 's/"aMule设置"/"电驴下载"/g' `grep "aMule设置" -rl ./`
+sed -i 's/"网络存储"/"存储"/g' `grep "网络存储" -rl ./`
+sed -i 's/"Turbo ACC 网络加速"/"网络加速"/g' `grep "Turbo ACC 网络加速" -rl ./`
+sed -i 's/"实时流量监测"/"流量"/g' `grep "实时流量监测" -rl ./`
+sed -i 's/"KMS 服务器"/"KMS激活"/g' `grep "KMS 服务器" -rl ./`
+sed -i 's/"TTYD 终端"/"命令窗"/g' `grep "TTYD 终端" -rl ./`
+sed -i 's/"USB 打印服务器"/"打印服务"/g' `grep "USB 打印服务器" -rl ./`
+sed -i 's/"Web 管理"/"Web"/g' `grep "Web 管理" -rl ./`
+sed -i 's/"管理权"/"改密码"/g' `grep "管理权" -rl ./`
+sed -i 's/"带宽监控"/"监控"/g' `grep "带宽监控" -rl ./`
+sed -i 's/"Argon 主题设置"/"Argon设置"/g' `grep "Argon 主题设置" -rl ./`
+
+sed -i "2i uci set wireless.@wifi-iface[0].ssid=Xiaomi_R3G" ./package/lean/default-settings/files/zzz-default-settings
+sed -i "3i uci set wireless.@wifi-iface[1].ssid=Xiaomi_R3G_5G" ./package/lean/default-settings/files/zzz-default-settings
+sed -i "4i uci commit wireless" ./package/lean/default-settings/files/zzz-default-settings
+sed -i "5i wifi\n" ./package/lean/default-settings/files/zzz-default-settings
