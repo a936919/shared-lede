@@ -1,7 +1,6 @@
 #!/bin/sh
 # 下载源码
 git clone -b master --single-branch https://github.com/Lienol/openwrt
-git clone -b danshui https://github.com/281677160/openwrt-package.git
 mv ./openwrt/* ./
 
 # 下载自定义插件
