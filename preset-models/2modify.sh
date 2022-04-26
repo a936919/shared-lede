@@ -15,6 +15,16 @@ cp -f uci-scripts/* files/etc/uci-defaults
 #sed -i 's/OpenWrt/coolxiaomi/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #sed -i 's/wireless.default_radio${devidx}.encryption=none/wireless.default_radio${devidx}.encryption=psk-mixed/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #sed -i '/encryption/a\set wireless.default_radio${devidx}.key=coolxiaomi' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+
+sed -i 's/services/nas/g' feeds/luci/applications/luci-app-samba4/luasrc/controller/*.lua
+sed -i 's/services/nas/g' feeds/luci/applications/luci-app-samba4/luasrc/model/cbi/aliyundrive-webdav/*.lua
+sed -i 's/services/nas/g' feeds/luci/applications/luci-app-samba4/luasrc/view/aliyundrive-webdav/*.htm
+
+
+sed -i "2i uci set wireless.@wifi-iface[0].ssid=Xiaomi_R3G" ./package/lean/default-settings/files/zzz-default-settings
+sed -i "3i uci set wireless.@wifi-iface[1].ssid=Xiaomi_R3G_5G" ./package/lean/default-settings/files/zzz-default-settings
+sed -i "4i uci commit wireless" ./package/lean/default-settings/files/zzz-default-settings
+sed -i "5i wifi\n" ./package/lean/default-settings/files/zzz-default-settings
 #修改登录密码为coolxiaomi
 #sed -i '/root/croot:$1$CBd7u73H$LvSDVXLBrzpk4JfuuN.Lv1:18676:0:99999:7:::' package/base-files/files/etc/shadow
 #切换ramips内核到5.15
