@@ -2,7 +2,7 @@
 #修改登录IP
 sed -i 's/192.168.1.1/10.10.10.1/g' package/base-files/files/bin/config_generate
 #修改主机名
-sed -i 's/OpenWrt/Xiaomi-Router/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/Xiaomi-R3G/g' package/base-files/files/bin/config_generate
 #删除自带低版本xray-core
 rm -rf feeds/packages/net/xray-core
 rm -rf package/feeds/packages/xray-core
