@@ -16,9 +16,9 @@ cp -f uci-scripts/* files/etc/uci-defaults
 #sed -i 's/wireless.default_radio${devidx}.encryption=none/wireless.default_radio${devidx}.encryption=psk-mixed/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #sed -i '/encryption/a\set wireless.default_radio${devidx}.key=coolxiaomi' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
-sed -i 's/services/nas/g' luci/applications/luci-app-samba4/luasrc/controller/*.lua
-sed -i 's/services/nas/g' luci/applications/luci-app-samba4/luasrc/model/cbi/aliyundrive-webdav/*.lua
-sed -i 's/services/nas/g' luci/applications/luci-app-samba4/luasrc/view/aliyundrive-webdav/*.htm
+sed -i 's/services/nas/g' luci/applications/luci-app-samba/luasrc/controller/*.lua
+sed -i 's/services/nas/g' luci/applications/luci-app-samba/luasrc/model/cbi/samba/*.lua
+sed -i 's/services/nas/g' luci/applications/luci-app-samba4/luasrc/view/samba/*.htm
 
 #修改登录密码为coolxiaomi
 #sed -i '/root/croot:$1$CBd7u73H$LvSDVXLBrzpk4JfuuN.Lv1:18676:0:99999:7:::' package/base-files/files/etc/shadow
